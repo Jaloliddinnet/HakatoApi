@@ -49,5 +49,17 @@ namespace HakatoApi.Controllers
         }
 
 
+        [HttpGet("Search")]
+
+        public async Task<IActionResult> Search(string? searchstringFirsName , string? searchStringLastName)
+        {
+            List<Doctor> list = new List<Doctor>();
+
+            list = context.doctor.Where(p => searchstringFirsName == null || p.First_name.ToLower().Contains(searchstringFirsName)).
+                Where(p => searchStringLastName == null || p.Last_name.ToLower().Contains(searchStringLastName)).ToList();
+
+            return Ok(list);
+        }
+
     }
 }

@@ -45,9 +45,22 @@ namespace HakatoApi.Controllers
             OldPatient.HomeLocation= patient.HomeLocation;
             OldPatient.Direction= patient.Direction;
             OldPatient.patient = patient.patient;
+            OldPatient.born =   patient.born;
 
             await context.SaveChangesAsync();
             return Ok(context.patient);
+        }
+
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search(string? SearchStringFirstName)
+        {
+             List<Patient> list = new List<Patient>();
+
+            list = context.patient.Where(p => SearchStringFirstName == null || p.First_name.ToLower().Contains(SearchStringFirstName)).
+                
+                ToList();
+
+            return Ok(list);
         }
     }
 }

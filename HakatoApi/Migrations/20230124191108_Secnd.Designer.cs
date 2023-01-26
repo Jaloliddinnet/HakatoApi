@@ -3,6 +3,7 @@ using System;
 using HakatoApi.DBContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace HakatoApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230124191108_Secnd")]
+    partial class Secnd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,36 +93,6 @@ namespace HakatoApi.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("patient");
-                });
-
-            modelBuilder.Entity("HakatoApi.Models.sickness", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("doctor_id")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("inTheHospital")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("info")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("outTheHospital")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("sickness_name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("sickness");
                 });
 #pragma warning restore 612, 618
         }

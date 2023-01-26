@@ -11,5 +11,6 @@ namespace HakatoApi.DBContext
 
         public DbSet<Doctor> doctor { get; set; }
         public DbSet<Patient> patient { get; set; }
+        public DbSet<sickness> sickness { get; set; }
     }
 }

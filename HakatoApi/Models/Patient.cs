@@ -9,5 +9,6 @@
         public string Direction { get; set; }//Qo'shimcha malumotlar nechi 
         public bool patient { get; set; }
         public bool gender { get; set; }
+        public DateTime born { get; set; }
     }
 }
