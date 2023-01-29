@@ -1,4 +1,5 @@
 ﻿using HakatoApi.DBContext;
+using HakatoApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,16 @@ namespace HakatoApi.Controllers
         {
             return Ok();
         }
+
+        [HttpPost("Add")]
+        public async Task<IActionResult> AddDoctor(sickness sickness)
+        {
+            await context.sickness.AddAsync(sickness);
+            await context.SaveChangesAsync();
+
+            return Ok(context.sickness);
+        }
+
     }
 }
 
