@@ -2,6 +2,7 @@
 using HakatoApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HakatoApi.Controllers
 {
@@ -30,6 +31,24 @@ namespace HakatoApi.Controllers
             return Ok(context.sickness);
         }
 
+        [HttpPut("Updata")]
+
+        public async Task<IActionResult> Updatadoctor(int id, sickness sickness)
+        {
+            var Oldsicness = await context.sickness.FirstOrDefaultAsync(p => p.ID == id);
+
+            if (Oldsicness == null)
+                return NotFound("Parint is not found");
+
+            Oldsicness.doctor_id = Oldsicness.doctor_id;
+            Oldsicness.sickness_name = sickness.sickness_name;
+            Oldsicness.outTheHospital = sickness.outTheHospital;
+            Oldsicness.inTheHospital = sickness.inTheHospital;
+            Oldsicness.info = sickness.info;
+
+            await context.SaveChangesAsync();
+            return Ok(context.patient);
+        }
     }
 }
 
