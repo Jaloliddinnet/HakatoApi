@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HakatoApi", "HakatoApi\HakatoApi.csproj", "{E3A77305-36BF-4654-99E6-DE84CB42D961}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HakatonApp", "HakatonApp\HakatonApp.csproj", "{FF5A2680-2442-42FC-8C6D-CD745241CC94}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{E3A77305-36BF-4654-99E6-DE84CB42D961}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3A77305-36BF-4654-99E6-DE84CB42D961}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A77305-36BF-4654-99E6-DE84CB42D961}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF5A2680-2442-42FC-8C6D-CD745241CC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF5A2680-2442-42FC-8C6D-CD745241CC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF5A2680-2442-42FC-8C6D-CD745241CC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF5A2680-2442-42FC-8C6D-CD745241CC94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
