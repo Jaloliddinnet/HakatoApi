@@ -3,11 +3,140 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HakatoApp"
+        xmlns:local="clr-namespace:HakatoApp" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+         TextElement.FontWeight="Regular"
+         TextElement.FontSize="13"
+         TextOptions.TextFormattingMode="Ideal"
+         TextOptions.TextRenderingMode="Auto"
+         Background="{DynamicResource MaterialDesignPaper}"
+         FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="MainWindow" Height="584" Width="838">
     <Grid>
+        <materialDesign:Card>
+            <TabControl
+    VerticalContentAlignment="Bottom"
+    materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+    Style="{StaticResource MaterialDesignNavigationRailTabControl}">
+                <TabItem Width="104">
+                    <TabItem.Header>
+                        <StackPanel
+          Width="auto"
+          Height="auto">
+                            <materialDesign:PackIcon
+            Width="29"
+            Height="29"
+            HorizontalAlignment="Center"
+            Kind="HomeCircle" />
+                            <TextBlock
+            HorizontalAlignment="Center"
+            Text="Dashboard" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock Text="" Margin="0,80,0,0"/>
+                </TabItem>
+                <TabItem Width="104">
+                    <TabItem.Header>
+                        <StackPanel
+          Width="auto"
+          Height="auto">
+                            <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="AccountMultiple" />
+                            <TextBlock
+            HorizontalAlignment="Center"
+            Text="Patients" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock>
+        <Run
+          Text="tab 1 content. Default look and behaviors." />
+        <LineBreak />
+        <LineBreak />
+        <Run
+          FontStyle="Italic">
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+      </Run>
 
+                    </TextBlock>
+                </TabItem>
+                <TabItem Width="104">
+                    <TabItem.Header>
+                        <StackPanel
+          Width="auto"
+          Height="auto">
+                            <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="Doctor" />
+                            <TextBlock
+            HorizontalAlignment="Center"
+            Text="Doctors" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock>
+        <Run
+          Text="tab 2 content. Default look and behaviors." />
+        <LineBreak />
+        <LineBreak />
+        <Run
+          FontStyle="Italic">
+        Praesent sed dui arcu. Vivamus porta auctor sagittis
+      </Run>
+                    </TextBlock>
+                </TabItem>
+                <TabItem Width="104">
+                    <TabItem.Header>
+                        <StackPanel
+          Width="auto"
+          Height="auto">
+                            <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="MortarPestlePlus" />
+                            <TextBlock
+            HorizontalAlignment="Center"
+            Text="Pharmacy" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock>
+        <Run
+          Text="tab 3 content. Default look and behaviors." />
+        <LineBreak />
+        <LineBreak />
+                    </TextBlock>
+                </TabItem>
+                <TabItem Width="104">
+                    <TabItem.Header>
+                        <StackPanel
+          Width="auto"
+          Height="auto">
+                            <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="Information" />
+                            <TextBlock
+            HorizontalAlignment="Center"
+            Text="About" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock>
+        <Run
+          Text="tab 4 content. Default look and behaviors." />
+        <LineBreak />
+        <LineBreak />
+                    </TextBlock>
+                </TabItem>
+            </TabControl>
+        </materialDesign:Card>
+        <Grid Margin="104,0,0,488"
+              Background="#999"/>
 
     </Grid>
 </Window>
