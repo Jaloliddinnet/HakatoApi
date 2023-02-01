@@ -11,8 +11,4 @@
     <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
-
 </Project>
