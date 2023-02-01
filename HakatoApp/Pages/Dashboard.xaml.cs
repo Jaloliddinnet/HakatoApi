@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace HakatoApp
+namespace HakatoApp.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Dashboard : Page
     {
-        public MainWindow()
+        public Dashboard()
         {
             InitializeComponent();
         }
-
-
     }
 }

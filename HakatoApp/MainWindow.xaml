@@ -34,7 +34,7 @@
             Text="Dashboard" />
                         </StackPanel>
                     </TabItem.Header>
-                    <TextBlock Text="" Margin="0,80,0,0"/>
+                    <TextBlock Text="jhgfuytftyf"/>
                 </TabItem>
                 <TabItem Width="104">
                     <TabItem.Header>
@@ -135,8 +135,7 @@
                 </TabItem>
             </TabControl>
         </materialDesign:Card>
-        <Grid Margin="104,0,0,488"
-              Background="#999"/>
+        
 
     </Grid>
 </Window>
