@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HakatoApp.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,24 @@ namespace HakatoApp
             InitializeComponent();
         }
 
+        private void TabItem_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
 
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (asd.SelectedIndex == 0)
+            {
+              Dashboard dashboard= new Dashboard();
+                Dashboard1.Content = dashboard;
+            }
+            else if (asd.SelectedIndex == 1)
+            {
+                Patients patients = new Patients();
+                Patients.Content = patients;
+            }
+             
+        }
     }
 }

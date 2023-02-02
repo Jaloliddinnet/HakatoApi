@@ -15,11 +15,11 @@
         Title="MainWindow" Height="584" Width="838">
     <Grid>
         <materialDesign:Card>
-            <TabControl
+            <TabControl x:Name="asd" SelectionChanged="TabControl_SelectionChanged"  
     VerticalContentAlignment="Bottom"
     materialDesign:ColorZoneAssist.Mode="PrimaryMid"
     Style="{StaticResource MaterialDesignNavigationRailTabControl}">
-                <TabItem Width="104">
+                <TabItem Width="104" MouseDoubleClick="TabItem_MouseDown">
                     <TabItem.Header>
                         <StackPanel
           Width="auto"
@@ -33,8 +33,10 @@
             HorizontalAlignment="Center"
             Text="Dashboard" />
                         </StackPanel>
-                    </TabItem.Header>
-                    <TextBlock Text="jhgfuytftyf"/>
+                    </TabItem.Header >
+                    <Frame x:Name="Dashboard1">
+                        
+                    </Frame>
                 </TabItem>
                 <TabItem Width="104">
                     <TabItem.Header>
@@ -51,17 +53,9 @@
             Text="Patients" />
                         </StackPanel>
                     </TabItem.Header>
-                    <TextBlock>
-        <Run
-          Text="tab 1 content. Default look and behaviors." />
-        <LineBreak />
-        <LineBreak />
-        <Run
-          FontStyle="Italic">
-        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-      </Run>
-
-                    </TextBlock>
+                    <Frame x:Name="Patients">
+                        
+                    </Frame>
                 </TabItem>
                 <TabItem Width="104">
                     <TabItem.Header>

@@ -25,6 +25,19 @@ namespace HakatoApp.Pages
             InitializeComponent();
         }
 
-      
+        private void DataGrid_SelectionChanged()
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

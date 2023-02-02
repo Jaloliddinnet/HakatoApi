@@ -16,11 +16,43 @@
       Title="Patients">
 
     <Grid>
-        <Grid Margin="0,80,0,0"/>
+        <Grid Margin="0,80,0,0">
+            <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
+
+        </Grid>
         <Grid Margin="0,0,0,488"
               Background="#A569BD"
-              />
-      
+              >
+            <ComboBox
+  materialDesign:HintAssist.Hint="Location"
+  materialDesign:TextFieldAssist.PrefixText=""
+  IsEditable="True" Margin="524,10,36,0" VerticalAlignment="Top" Height="48">
+                <ComboBoxItem
+    Content="Toshkent" />
+                <ComboBoxItem
+    Content="Samarkand" />
+                <ComboBoxItem
+    Content="Bukhara" />
+                <ComboBoxItem
+    Content="Khorazim" />
+                <ComboBoxItem
+    Content="Jizzakh" />
+            </ComboBox>
+        </Grid>
+
+        <TextBox
+    Style="{StaticResource MaterialDesignFilledTextBox}"
+    TextWrapping="Wrap"
+    MaxLength="40"
+    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignFilledTextBoxTextCountComboBox}"
+    materialDesign:HintAssist.Hint="First name" Margin="21,10,505,513" TextChanged="TextBox_TextChanged" Text="" />
+        <TextBox
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            TextWrapping="Wrap"
+            MaxLength="40"
+            materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignFilledTextBoxTextCountComboBox}"
+            materialDesign:HintAssist.Hint="Last name" Margin="263,10,263,513" TextChanged="TextBox_TextChanged" Text="" />
+
 
     </Grid>
 </Page>
