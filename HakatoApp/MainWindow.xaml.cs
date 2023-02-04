@@ -33,17 +33,41 @@ namespace HakatoApp
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (asd.SelectedIndex == 0)
-            {
-              Dashboard dashboard= new Dashboard();
-                Dashboard1.Content = dashboard;
-            }
-            else if (asd.SelectedIndex == 1)
-            {
-                Patients patients = new Patients();
-                Patients.Content = patients;
-            }
-             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Patients patients = new Patients(); 
+            Menyu.Content = patients;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            Menyu.Content = dashboard;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Doctors doctors = new Doctors();
+            Menyu.Content = doctors;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Pharmacy pharmacy = new Pharmacy();
+            Menyu.Content = pharmacy;
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            About about = new About();
+            Menyu.Content = about;
+        }
+
+        private void Doctor_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }

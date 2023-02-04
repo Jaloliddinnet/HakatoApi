@@ -12,46 +12,43 @@
          TextOptions.TextRenderingMode="Auto"
          Background="{DynamicResource MaterialDesignPaper}"
          FontFamily="{DynamicResource MaterialDesignFont}"
-       d:DesignHeight="568" d:DesignWidth="734"
+       d:DesignHeight="580" d:DesignWidth="734"
       Title="Patients">
 
     <Grid>
         <Grid Margin="0,80,0,0">
             <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
+            
         </Grid>
         <Grid Margin="0,0,0,488"
               Background="#A569BD"
               >
             <ComboBox
-  materialDesign:HintAssist.Hint="Location"
-  materialDesign:TextFieldAssist.PrefixText=""
-  IsEditable="True" Margin="524,10,36,0" VerticalAlignment="Top" Height="48">
+  Style="{StaticResource MaterialDesignOutlinedComboBox}"
+  materialDesign:HintAssist.Hint="With helper text" Margin="501,0,10,0" Height="60"
+  >
                 <ComboBoxItem
-    Content="Toshkent" />
+    Content="Item 1" />
                 <ComboBoxItem
-    Content="Samarkand" />
+    Content="Item 2" />
                 <ComboBoxItem
-    Content="Bukhara" />
-                <ComboBoxItem
-    Content="Khorazim" />
-                <ComboBoxItem
-    Content="Jizzakh" />
+    Content="Samarqand" />
             </ComboBox>
         </Grid>
 
         <TextBox
-    Style="{StaticResource MaterialDesignFilledTextBox}"
-    TextWrapping="Wrap"
-    MaxLength="40"
-    materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignFilledTextBoxTextCountComboBox}"
-    materialDesign:HintAssist.Hint="First name" Margin="21,10,505,513" TextChanged="TextBox_TextChanged" Text="" />
+        Style="{StaticResource MaterialDesignFilledTextBox}"
+        TextWrapping="Wrap"
+        MaxLength="40"
+        materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignFilledTextBoxTextCountComboBox}"
+        materialDesign:HintAssist.Hint="First name" Margin="21,10,505,513" TextChanged="TextBox_TextChanged" Text="" />
         <TextBox
             Style="{StaticResource MaterialDesignFilledTextBox}"
             TextWrapping="Wrap"
             MaxLength="40"
             materialDesign:TextFieldAssist.CharacterCounterVisibility="{Binding IsChecked, Converter={StaticResource BooleanToVisibilityConverter}, ElementName=MaterialDesignFilledTextBoxTextCountComboBox}"
-            materialDesign:HintAssist.Hint="Last name" Margin="263,10,263,513" TextChanged="TextBox_TextChanged" Text="" />
+            materialDesign:HintAssist.Hint="Last name" Margin="287,12,239,500" TextChanged="TextBox_TextChanged" />
 
 
     </Grid>

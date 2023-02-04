@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HakatoApi", "HakatoApi\HakatoApi.csproj", "{E3A77305-36BF-4654-99E6-DE84CB42D961}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HakatoApp", "HakatoApp\HakatoApp.csproj", "{77C99C18-369E-4E50-9F24-8F29A1852CBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HakatoApp", "HakatoApp\HakatoApp.csproj", "{77C99C18-369E-4E50-9F24-8F29A1852CBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hakaton.Data", "Hakaton.Data\Hakaton.Data.csproj", "{5E3DEE33-BCC8-4CD2-8262-17E01C634318}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{77C99C18-369E-4E50-9F24-8F29A1852CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C99C18-369E-4E50-9F24-8F29A1852CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77C99C18-369E-4E50-9F24-8F29A1852CBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E3DEE33-BCC8-4CD2-8262-17E01C634318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3DEE33-BCC8-4CD2-8262-17E01C634318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3DEE33-BCC8-4CD2-8262-17E01C634318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3DEE33-BCC8-4CD2-8262-17E01C634318}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

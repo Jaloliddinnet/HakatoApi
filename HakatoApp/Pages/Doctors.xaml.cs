@@ -16,33 +16,13 @@ using System.Windows.Shapes;
 namespace HakatoApp.Pages
 {
     /// <summary>
-    /// Interaction logic for Patients.xaml
+    /// Interaction logic for Doctors.xaml
     /// </summary>
-    public partial class Patients : Page
+    public partial class Doctors : Page
     {
-        public Patients()
+        public Doctors()
         {
             InitializeComponent();
-        }
-
-        private void DataGrid_SelectionChanged()
-        {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void TextBox_ColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
-        {
-
         }
     }
 }
