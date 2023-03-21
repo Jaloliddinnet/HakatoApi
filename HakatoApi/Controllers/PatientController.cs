@@ -1,8 +1,9 @@
-﻿using HakatoApi.DBContext;
-using HakatoApi.Models;
+﻿using HakatoApi.DTO.Doctor;
+using HakatoApi.DTO.Patients;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using servise.Servises;
+using servise.Servises.DoctorSer;
 
 namespace HakatoApi.Controllers
 {
@@ -10,57 +11,41 @@ namespace HakatoApi.Controllers
     [ApiController]
     public class PatientController : ControllerBase
     {
-        AppDbContext context;
-        public PatientController(AppDbContext context)
+        private readonly IPatientServise servis;
+
+        public PatientController(IPatientServise servis)
         {
-            this.context = context;
+            this.servis = servis;
         }
 
-
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(context.patient.ToList());
+            return Ok(await servis.GetAll());
         }
-
+        [HttpGet]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await servis.GetById(id));
+        }
         [HttpPost]
-        public async Task<IActionResult> AddPatient(Patient patient)
+        public async Task<IActionResult> AddDoctor([FromForm] AddPatientsDTO addPatients)
         {
-            await context.patient.AddAsync(patient);
-            await context.SaveChangesAsync();
-
-            return Ok(context.patient);
+            await servis.Add(addPatients);
+            return Ok("Add");
         }
 
-        [HttpPut]
-        public async Task<IActionResult> Update(int id,Patient patient)
+        [HttpPut("Updata")]
+        public async Task<IActionResult> Updatadoctor(int id, [FromForm] AddPatientsDTO patent)
         {
-            var OldPatient = await context.patient.FirstOrDefaultAsync(p => p.ID == id);
-
-            if (OldPatient == null)
-                return NotFound("Parint is not found");
-
-            OldPatient.Last_name = patient.Last_name;
-            OldPatient.First_name= patient.First_name;
-            OldPatient.HomeLocation= patient.HomeLocation;
-            OldPatient.Direction= patient.Direction;
-            OldPatient.patient = patient.patient;
-            OldPatient.born =   patient.born;
-
-            await context.SaveChangesAsync();
-            return Ok(context.patient);
+            await servis.Update(id, patent);
+            return Ok("Updated");
         }
-
-        [HttpGet("Search")]
-        public async Task<IActionResult> Search(string? SearchStringFirstName)
+        [HttpDelete]
+        public async Task<IActionResult> Deleted(int id)
         {
-             List<Patient> list = new List<Patient>();
-
-            list = context.patient.Where(p => SearchStringFirstName == null || p.First_name.ToLower().Contains(SearchStringFirstName)).
-                
-                ToList();
-
-            return Ok(list);
+            await servis.Delete(id);
+            return Ok("Deleted");
         }
     }
 }

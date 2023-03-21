@@ -1,8 +1,10 @@
-﻿using HakatoApi.DBContext;
+﻿using AutoMapper;
+using HakatoApi.DBContext;
+using HakatoApi.DTO.sickness;
 using HakatoApi.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using servise.Servises;
 
 namespace HakatoApi.Controllers
 {
@@ -10,45 +12,45 @@ namespace HakatoApi.Controllers
     [ApiController]
     public class SicknessController : ControllerBase
     {
-        AppDbContext context;
-        public SicknessController(AppDbContext context)
-        {
-            this.context = context;
-        }
+        //private readonly ISicknessServise _servise;
 
-        [HttpGet("Get")]
-        public async Task<IActionResult> Get()
-        {
-            return Ok();
-        }
+        //public SicknessController(ISicknessServise servise)
+        //{
+        //    _servise = servise;
+        //}
 
-        [HttpPost("Add")]
-        public async Task<IActionResult> AddDoctor(sickness sickness)
-        {
-            await context.sickness.AddAsync(sickness);
-            await context.SaveChangesAsync();
+        //[HttpGet("Get")]
+        //public async Task<IActionResult> Get()
+        //{
+        //    return Ok(context.sickness.Include(p => p.doctors ).Include(p => p.patient).ToList());
+        //}
+        //[HttpPost("Add")]
+        //public async Task<IActionResult> Addsicness( AddsicknessDTO addsicknessdto)
+        //{
+        //    var sickness = mapper.Map<sickness>(addsicknessdto);
 
-            return Ok(context.sickness);
-        }
 
-        [HttpPut("Updata")]
+        //    await context.sickness.AddAsync(sickness);
+        //    await context.SaveChangesAsync();
 
-        public async Task<IActionResult> Updatadoctor(int id, sickness sickness)
-        {
-            var Oldsicness = await context.sickness.FirstOrDefaultAsync(p => p.ID == id);
+        //    return Ok(context.sickness);
+        //}
 
-            if (Oldsicness == null)
-                return NotFound("Parint is not found");
+        //[HttpPut("Updata")]
 
-            Oldsicness.doctor_id = Oldsicness.doctor_id;
-            Oldsicness.sickness_name = sickness.sickness_name;
-            Oldsicness.outTheHospital = sickness.outTheHospital;
-            Oldsicness.inTheHospital = sickness.inTheHospital;
-            Oldsicness.info = sickness.info;
+        //public async Task<IActionResult> Updatadoctor(int id, AddsicknessDTO addsicknessDTO)
+        //{
+        //    var Oldsickness = await context.sickness.FirstOrDefaultAsync(p => p.ID == id);
+        //    var newsickness = mapper.Map<sickness>(addsicknessDTO);
+        //    newsickness.ID = id;
 
-            await context.SaveChangesAsync();
-            return Ok(context.patient);
-        }
+        //    context.sickness.Attach(Oldsickness).CurrentValues.SetValues(newsickness);
+        //    await context.SaveChangesAsync();
+
+
+        //    await context.SaveChangesAsync();
+        //    return Ok(context.sickness);
+        //}
     }
 }
 

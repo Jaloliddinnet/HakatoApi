@@ -1,5 +1,10 @@
+using Data.IRepositories;
+using Data.Repositories;
 using HakatoApi.DBContext;
+using HakatoApi.Extention;
 using Microsoft.EntityFrameworkCore;
+using servise.Servises.DoctorSer;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +14,17 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<AppDbContext>(p => p.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
- 
+builder.Services.AppDbConTextes(builder.Configuration);
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddRepositories();
+builder.Services.AddService();
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+builder.Services.AddControllers().AddJsonOptions(x =>
+        x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -22,7 +36,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+app.UseAuthorization(); 
 
 app.MapControllers();
 
